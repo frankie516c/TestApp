@@ -4,6 +4,10 @@ WORKDIR /workspace
 
 COPY . .
 
+RUN uv sync
+
 EXPOSE 8000
 
-CMD ['uv', 'run', 'fastapi', 'run']
+ENTRYPOINT ['uv', 'run', 'fastapi', 'run']
+
+# CMD ['uv', 'run', 'fastapi', 'run']
